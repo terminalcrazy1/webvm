@@ -4,8 +4,8 @@ RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt-get -y install apt-utils gcc nano \
 	fakeroot dbus base ucf manpages \
 	debian-installer-launcher file make curl \
-	less build-essential git libx11-dev
-RUN git clone git://git.suckless.org/dwm
+	less build-essential git libx*-dev xorg
+RUN git clone git://git.suckless.org/dwm /home/user/dwm
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user ./examples /home/user/examples
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
