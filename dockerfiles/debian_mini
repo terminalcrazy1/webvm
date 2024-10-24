@@ -5,7 +5,7 @@ RUN apt-get -y install apt-utils gcc nano \
 	fakeroot dbus base ucf manpages \
 	debian-installer-launcher file make curl \
 	less build-essential git libx11-dev libxft-dev \
-	xorg libxinerama-dev freetype2 fontconfig
+	xorg libxinerama-dev
 RUN git clone git://git.suckless.org/dwm /home/user/dwm
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user ./examples /home/user/examples
