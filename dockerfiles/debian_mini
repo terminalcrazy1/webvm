@@ -4,8 +4,7 @@ RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt-get -y install apt-utils gcc nano \
 	fakeroot dbus base ucf manpages \
 	debian-installer-launcher file make curl \
-	less build-essential git libx11-dev libxft-dev \
-	xorg libxinerama-dev
+	less build-essential git glibc sqlite3 libsqlite3-dev \
 RUN git clone git://git.suckless.org/dwm /home/user/dwm
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user ./examples /home/user/examples
